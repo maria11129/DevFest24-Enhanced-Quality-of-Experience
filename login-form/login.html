@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" media="all">
+    <title>LOGIN | Invictus</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">  
+    
+</head>
+<body>
+    <div class="form">
+        <div class="log">
+            <div id="login-form">
+                <p>Sign in to your account!</p>
+                <br>
+                <form>
+                    <div class="wr">
+                        <input type="email" id="login-email" name="email" placeholder="Email address" required><br>
+                    </div>
+                    <div class="wr">
+                        <input type="password" id="login-password" name="password" placeholder="Password" required><br>
+                    </div>
+                    <div class="check">
+                        <label for="rememberme">
+                            <input type="checkbox" id="rememberme" name="rememberme"> Remember Me<br>
+                        </label>
+                    </div>
+                    <br>
+                    <button type="submit" class="subm">Log in</button>
+                </form>
+                <br>
+                don't have an account? <span onclick="showSignUp()" class="instruction">Sign up</span>
+            </div>
+
+            <form id="signup-form" style="display: none;">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <input type="password" id="verify-password" placeholder="Verify Password" required>
+                <button type="submit">Register</button>
+                <p id="error-message"></p>
+            </form>
+
+            <div id="verification-section" style="display: none;">
+                <input type="text" id="verification-code" placeholder="Enter your code" required>
+                <button id="send-code">Verify Code</button>
+                <p id="verification-message"></p>
+            </div>
+            
+            <br>
+            Have an account? <span onclick="showLogin()" class="instruction">Sign in</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "PbHevgd9iNN_gJ2BR",
+      });
+   })();
+</script>
+
+    
+</body>
+</html>

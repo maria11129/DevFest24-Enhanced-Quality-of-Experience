@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+    body {
+        background-color:hsla(202,61%,30%,1);
+        background-image:
+        radial-gradient(at 93% 82%, hsla(229,43%,37%,1) 0px, transparent 50%),
+        radial-gradient(at 54% 0%, hsla(197,52%,20%,1) 0px, transparent 50%),
+        radial-gradient(at 88% 80%, hsla(208,87%,65%,1) 0px, transparent 50%),
+        radial-gradient(at 8% 90%, hsla(260,45%,54%,1) 0px, transparent 50%),
+        radial-gradient(at 41% 29%, hsla(201,58%,43%,1) 0px, transparent 50%),
+        radial-gradient(at 83% 14%, hsla(228,53%,44%,1) 0px, transparent 50%),
+        radial-gradient(at 65% 5%, hsla(186,100%,14%,1) 0px, transparent 50%);
+        background-size: cover; 
+        background-repeat: no-repeat;
+        height: 100vh;
+        font-family: "Audiowide", sans-serif;
+        font-weight: bold;
+        font-weight: 400;
+        overflow: hidden;
+    }
+    
+@media (min-width: 600px) {
+    body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+    
+}
+
+button {
+    cursor: pointer;
+}
+
+.form {
+    position: relative;
+    margin: auto;
+    align-items: center;
+    background-color:hsla(199,97%,27%,1);
+    background-image:
+    radial-gradient(at 59% 67%, hsla(214,59%,60%,1) 0px, transparent 50%),
+    radial-gradient(at 73% 44%, hsla(245,65%,73%,1) 0px, transparent 50%),
+    radial-gradient(at 88% 60%, hsla(212,95%,75%,1) 0px, transparent 50%),
+    radial-gradient(at 22% 51%, hsla(224,75%,66%,1) 0px, transparent 50%),
+    radial-gradient(at 23% 72%, hsla(240,74%,68%,1) 0px, transparent 50%);
+    border-radius: 2rem;
+    padding: 60px;
+    width: 45%;
+    gap: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.form::before{
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #cfd8e1, 
+        #8d94eb,  
+        #e2ded0,
+        #ffffff
+    );
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    background-size: 800%;
+    z-index: -1;
+    width: calc(100% + 8px); 
+    height: calc(100% + 8px); 
+    filter: blur(16px) brightness(1.5); 
+    animation: glowing 20s linear infinite;
+    border-radius: 12px;
+    opacity: 1;
+    transition: none;
+}
+
+.log {
+     justify-content: flex-end;
+     width: 100%;
+     margin-left: auto;
+     margin-bottom: 0.5rem;
+     text-align: center;
+}
+
+.log p{
+    font-size: 16px;
+    line-height: 1.5rem;
+    font-weight: bold;
+}
+
+
+.btn {
+    background-color: #c2c2c2;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: end;
+}
+
+.btn i {
+    margin-right: 8px;
+    color: rgb(5, 5, 116);
+}
+
+input[type="text"], input[type="email"] {
+    width: 50%;
+    padding: 8px 15px;
+    border: 2px solid #ccc; 
+    border-radius: 6px; 
+    font-size: 0.9rem;
+    box-sizing: content-box; 
+    transition: border-color 0.3s ease; 
+    margin-bottom: 10px;
+}
+
+input[type="password"] {
+    width: 50%;
+    padding: 8px 15px;
+    border: 2px solid #ccc; 
+    border-radius: 6px; 
+    font-size: 0.9rem;
+    box-sizing: content-box; 
+    transition: border-color 0.3s ease; 
+}
+
+ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #4b45e7; 
+    outline: none; 
+}
+
+.info {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    background-color:hsla(202,61%,30%,1);
+    background-image:
+    radial-gradient(at 93% 82%, hsla(229,43%,37%,1) 0px, transparent 50%),
+    radial-gradient(at 54% 0%, hsla(197,52%,20%,1) 0px, transparent 50%),
+    radial-gradient(at 88% 80%, hsla(208,87%,65%,1) 0px, transparent 50%),
+    radial-gradient(at 8% 90%, hsla(260,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 41% 29%, hsla(201,58%,43%,1) 0px, transparent 50%),
+    radial-gradient(at 83% 14%, hsla(228,53%,44%,1) 0px, transparent 50%),
+    radial-gradient(at 65% 5%, hsla(186,100%,14%,1) 0px, transparent 50%);
+    border-radius: 1rem;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+.info-img {
+    width: 100%; 
+    max-width: 100%;
+    border-radius: 12px; 
+    margin-top: 2px; 
+    animation: logoSlide 1s ease-out 0s infinite normal none;
+}
+
+.subm {
+    margin: 5px;
+    padding: 9px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    background-color: #8e8e96; 
+    transition: color 0.3s ease;
+}
+
+.subm::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #4a4848;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+
+.subm::before {
+    content: "";
+    background: linear-gradient(
+    45deg,
+    #01567f, 
+    #cfd8e1, 
+    #8d94eb, 
+    #9fd4f5, 
+    #6f87d6,
+    #8899db  
+);
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    background-size: 800%;
+    z-index: -1;
+    width: calc(100% + 8px); 
+    height: calc(100% + 8px); 
+    filter: blur(16px) brightness(1.5); 
+    animation: glowing 20s linear infinite;
+    border-radius: 12px;
+    opacity: 1;
+    transition: none;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.subm:hover{
+    transform: translateY(-4px);
+}
+
+.subm:hover::before {
+    opacity: 1;
+}
+
+.subm:active:after {
+    background: transparent;
+}
+
+.subm:active {
+    color: #000;
+    font-weight: bold;
+}
+
+.wr {
+    width: 100%; 
+    margin-bottom: 10px;
+}
+
+.instruction {
+    color: #141515; 
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 10px;
+    font-size: 1rem; 
+}
+
+.instruction:hover {
+    color: #484dcc; 
+}
+
+@keyframes logoSlide {
+    from {
+        transform: translate(-35px) ;
+    }   
+    to {
+        transform: translate(25px);
+    }   
+}
+
+
