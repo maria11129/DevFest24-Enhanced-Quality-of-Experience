@@ -6,7 +6,6 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(228, 85%, 63%);
   --title-color: hsl(228, 18%, 16%);
   --text-color: hsl(228, 8%, 56%);
@@ -14,7 +13,6 @@
   --shadow-color: hsla(228, 80%, 4%, .1);
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Nunito Sans", system-ui;
   --normal-font-size: .938rem;
   --smaller-font-size: .75rem;
@@ -27,6 +25,9 @@
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
+
+  --icon-font-size: 24px;
+    --client-width: 80px; /
 }
 
 /*========== Responsive typography ==========*/
@@ -75,18 +76,6 @@ body.dark-theme {
   --shadow-color: hsla(228, 80%, 4%, .3);
 }
 
-/*========== 
-	Color changes in some parts of 
-	the website, in dark theme
-==========*/
-.dark-theme .sidebar__content::-webkit-scrollbar {
-  background-color: hsl(228, 16%, 30%);
-}
-
-.dark-theme .sidebar__content::-webkit-scrollbar-thumb {
-  background-color: hsl(228, 16%, 40%);
-}
-
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   margin-inline: 1.5rem;
@@ -119,22 +108,6 @@ body.dark-theme {
   transition: background-color .4s;
 }
 
-.header__logo {
-  display: inline-flex;
-  align-items: center;
-  column-gap: .25rem;
-}
-
-.header__logo i {
-  font-size: 1.5rem;
-  color: var(--first-color);
-}
-
-.header__logo span {
-  color: var(--title-color);
-  font-weight: var(--font-semi-bold);
-}
-
 .header__toggle {
   font-size: 1.5rem;
   color: var(--title-color);
@@ -164,11 +137,6 @@ body.dark-theme {
   row-gap: 3rem;
 }
 
-.sidebar__container {
-  height: 100%;
-  overflow: hidden;
-}
-
 .sidebar__user {
   display: grid;
   grid-template-columns: repeat(2, max-content);
@@ -181,7 +149,6 @@ body.dark-theme {
   position: relative;
   width: 50px;
   height: 50px;
-  background-color: transparent;
   border-radius: 50%;
   overflow: hidden;
   display: grid;
@@ -206,15 +173,6 @@ body.dark-theme {
 
 .sidebar__content {
   overflow: hidden auto;
-}
-
-.sidebar__content::-webkit-scrollbar {
-  width: .4rem;
-  background-color: hsl(228, 8%, 85%);
-}
-
-.sidebar__content::-webkit-scrollbar-thumb {
-  background-color: hsl(228, 8%, 75%);
 }
 
 .sidebar__title {
@@ -258,10 +216,6 @@ body.dark-theme {
   margin-top: auto;
 }
 
-.sidebar__actions button {
-  cursor: pointer;
-}
-
 .sidebar__theme {
   width: 100%;
   font-size: 1.25rem;
@@ -291,94 +245,117 @@ body.dark-theme {
   background-color: var(--first-color);
 }
 
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 360px) {
-  .header__container {
-    padding-inline: 1rem;
-  }
 
-  .sidebar {
-    width: max-content;
-  }
-  .sidebar__info, 
-  .sidebar__link span {
-    display: none;
-  }
-  .sidebar__user, 
-  .sidebar__list, 
-  .sidebar__actions {
-    justify-content: center;
-  }
-  .sidebar__user, 
-  .sidebar__link {
-    grid-template-columns: max-content;
-  }
-  .sidebar__user {
-    padding: 0;
-  }
-  .sidebar__link {
-    padding-inline: 2rem;
-  }
-  .sidebar__title {
-    padding-inline: .5rem;
-    margin-inline: auto;
-  }
+/*=============== MAIN CONTENT ===============*/
+.main {
+  background-color:var(--body-color); /* Set to match previous design */
+  padding: 2rem;
+  min-height: 100vh; /* Ensure it covers the full height */
+  margin-left: 288px; /* Align with the sidebar */
+  padding-top: 8rem; /* Padding for top content */
+  transition: margin-left .4s;
 }
 
-/* For large devices */
-@media screen and (min-width: 1150px) {
-  .header {
-    margin: 1rem;
-    padding-left: 340px;
-    transition: padding .4s;
-  }
-  .header__container {
-    height: calc(var(--header-height) + 2rem);
-    padding-inline: 2rem;
-  }
-  .header__logo {
-    order: 1;
+
+
+/* Network diagram styles */
+.network-diagram {
+  position: relative;
+  width: 70%;
+  height: 600px; 
+  margin: 2rem auto;
+  background-color: hsl(228, 24%, 16%); 
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+  
+
+.manager, .router, .client {
+  position: absolute;
+  background-color: var(--first-color);
+  color: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.router {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.manager {
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.client {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  margin-bottom: 20px; 
+  width: var(--client-width);
+  text-align: center;
+}
+
+/* Adjust client positions */
+.client1 {
+  left: 30%;
+}
+
+.client2 {
+  left: 70%;
+}
+
+/* SVG lines connecting icons */
+.bandwidth-line {
+  position: absolute;
+  stroke: white;
+  stroke-width: 3;
+  z-index: -1;
+}
+
+.client-text {
+  text-align: center; 
+  margin-top: 10px; 
+}
+
+.max {
+  color: hsl(120, 100%, 50%); 
+  font-weight: bold; 
+}
+
+.wants {
+  color: hsl(240, 100%, 50%); 
+}
+
+.gets {
+  color: hsl(0, 100%, 50%); 
+}
+
+
+@media screen and (max-width: 768px) {
+  .network-diagram {
+    width: 90%;
+    height: 90%;
   }
 
-  .sidebar {
-    left: 0;
-    width: 316px;
-    margin: 1rem;
-  }
-  .sidebar__info, 
-  .sidebar__link span {
-    transition: opacity .4s;
-  }
-  .sidebar__user, 
-  .sidebar__title {
-    transition: padding .4s;
-  }
-
-  /* Reduce sidebar */
-  .show-sidebar {
-    width: 90px;
-  }
-  .show-sidebar .sidebar__user {
-    padding-left: 1.25rem;
-  }
-  .show-sidebar .sidebar__title {
-    padding-left: 0;
-    margin-inline: auto;
-  }
-  .show-sidebar .sidebar__info, 
-  .show-sidebar .sidebar__link span {
-    opacity: 0;
-  }
-
-  .main {
-    padding-left: 340px;
-    padding-top: 8rem;
-    transition: padding .4s;
-  }
-
-  /* Add padding left */
-  .left-pd {
-    padding-left: 114px;
+  .router,
+  .manager,
+  .client {
+    width: 60px; /* Smaller size for mobile */
+    height: 60px;
+    font-size: 0.9rem; /* Smaller font size */
   }
 }

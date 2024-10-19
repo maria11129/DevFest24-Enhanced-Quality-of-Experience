@@ -1,104 +1,166 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
-      <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="assets/css/styles.css">
+   <title>INVICTUS | Admin Page</title>
+   <style>
+      .network-diagram {
+          position: relative;
+          width: 100%;
+          height: 500px; /* Adjust height as needed */
+      }
+      .manager, .router, .client {
+          position: absolute;
+          text-align: center;
+      }
+      .manager {
+          top: 20%; /* Position of the Manager */
+          left: 50%;
+          transform: translateX(-50%);
+      }
+      .router {
+          top: 40%; /* Position of the Router */
+          left: 50%;
+          transform: translateX(-50%);
+      }
+      .client {
+          top: 60%; /* Position of Clients */
+          width: 100px; /* Width for clients */
+          transform: translateX(-50%);
+          
+      }
+      .client1 { left: 30%; } /* Position of Client 1 */
+      .client2 { left: 50%; } /* Position of Client 2 */
+      .client3 { left: 70%; } /* Position of Client 3 */
 
-      <title>INVVICTUS | admin page</title>
-   </head>
-   <body>
-    
-      <header class="header" id="header">
-         <div class="header__container">
-            
-            <button class="header__toggle" id="header-toggle">
-               <i class="ri-menu-line"></i>
+
+      .bandwidth-line {
+         stroke: white;
+         stroke-width: 4; 
+         z-index: -1;
+}
+
+      .client-text span {
+         display: block; /* Makes each span a block element */
+         text-align: center; /* Center the text if needed */
+      }
+
+   </style>
+</head>
+<body>
+
+   <header class="header" id="header">
+      <div class="header__container">
+         <button class="header__toggle" id="header-toggle">
+            <i class="ri-menu-line"></i>
+         </button>
+      </div>
+   </header>
+
+   <nav class="sidebar" id="sidebar">
+      <div class="sidebar__container">
+         <div class="sidebar__user">
+            <div class="sidebar__img">
+               <img src="assets/png/pic.png" alt="image">
+            </div>
+            <div class="sidebar__info">
+               <h3>Hichem Tgv</h3>
+               <span>tgv123@email.com</span>
+            </div>
+         </div>
+         <div class="sidebar__content">
+            <div>
+               <h3 class="sidebar__title">MANAGE</h3>
+               <div class="sidebar__list">
+                  <a href="#" class="sidebar__link active-link">
+                     <i class="ri-pie-chart-2-fill"></i>
+                     <span>Dashboard</span>
+                  </a>
+                  <a href="#" class="sidebar__link">
+                     <i class="ri-add-box-fill"></i>
+                     <span>Create</span>
+                  </a>
+                  <a href="#" class="sidebar__link">
+                     <i class="ri-eye-fill"></i>
+                     <span>Read</span>
+                  </a>
+                  <a href="#" class="sidebar__link">
+                     <i class="ri-edit-2-fill"></i>
+                     <span>Update</span>
+                  </a>
+                  <a href="#" class="sidebar__link">
+                     <i class="ri-delete-bin-6-fill"></i>
+                     <span>Delete</span>
+                  </a>
+               </div>
+            </div>
+            <div>
+               <h3 class="sidebar__title">SETTINGS</h3>
+               <div class="sidebar__list">
+                  <a href="#" class="sidebar__link">
+                     <i class="ri-settings-3-fill"></i>
+                     <span>Settings</span>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <div class="sidebar__actions">
+            <button>
+               <i class="ri-moon-clear-fill sidebar__link sidebar__theme" id="theme-button">
+                  <span>Theme</span>
+               </i>
+            </button>
+            <button class="sidebar__link">
+               <i class="ri-logout-box-r-fill"></i>
+               <a href="../welcome-page/welcomepage.html">Log Out</a>
             </button>
          </div>
-      </header>
+      </div>
+   </nav>
 
-     
-      <nav class="sidebar" id="sidebar">
-         <div class="sidebar__container">
-            <div class="sidebar__user">
-               <div class="sidebar__img">
-                  <img src="assets/png/pic.png" alt="image">
-               </div>
-   
-               <div class="sidebar__info">
-                  <h3>Hichem tgv</h3>
-                  <span>tgv123@email.com</span>
-               </div>
-            </div>
-
-            <div class="sidebar__content">
-               <div>
-                  <h3 class="sidebar__title">MANAGE</h3>
-
-                  <div class="sidebar__list">
-                     <a href="#" class="sidebar__link active-link">
-                        <i class="ri-pie-chart-2-fill"></i>
-                        <span>Dashboard</span>
-                     </a>
-                     
-                     <a href="#" class="sidebar__link">
-                        <i class="ri-add-box-fill"></i>
-                        <span>Create</span>
-                    </a>
-                    
-                    <a href="#" class="sidebar__link">
-                        <i class="ri-eye-fill"></i>
-                        <span>Read</span>
-                    </a>
-                    
-                    <a href="#" class="sidebar__link">
-                        <i class="ri-edit-2-fill"></i>
-                        <span>Update</span>
-                    </a>
-                    
-                    <a href="#" class="sidebar__link">
-                        <i class="ri-delete-bin-6-fill"></i>
-                        <span>Delete</span>
-                    </a>
-                    
-                  </div>
-               </div>
-
-               <div>
-                  <h3 class="sidebar__title">SETTINGS</h3>
-
-                  <div class="sidebar__list">
-                     <a href="#" class="sidebar__link">
-                        <i class="ri-settings-3-fill"></i>
-                        <span>Settings</span>
-                     </a>
-                  </div>
-               </div>
-            </div>
-            <div class="sidebar__actions">
-               <button>
-                  <i class="ri-moon-clear-fill sidebar__link sidebar__theme" id="theme-button">
-                     <span>Theme</span>
-                  </i>
-               </button>
-               <button class="sidebar__link">
-                  <i class="ri-logout-box-r-fill"></i>
-                  <a  href="../welcome-page/welcomepage.html">Log Out</a>
-               </button>
-            </div>
+   <main class="main container" id="main">
+      <div class="network-diagram">
+         <div class="manager">
+           <i class="ri-user-fill" style="font-size: 24px;"></i>
+           <p>Manager</p>
          </div>
-      </nav>
+     
+         <div class="router">
+           <i class="ri-router-fill" style="font-size: 24px;"></i>
+           <p>Router</p>
+         </div>
+     
+           <div class="client client1">
+            <i class="fas fa-desktop" style="font-size: 24px;"></i>
+            <p>Client 1</p>
+        </div>
+        
+        <div class="client client2">
+            <i class="fas fa-desktop" style="font-size: 24px;"></i>
+            <p>Client 2</p>
+            <br>
+        </div>
+        
+        <div class="client client3">
+            <i class="fas fa-desktop" style="font-size: 24px;"></i>
+            <p>Client 3</p>
+         </div>
+        
+            <svg height="100%" width="100%">
+           <line x1="50%" y1="30%" x2="50%" y2="50%" class="bandwidth-line" />
+           <line x1="50%" y1="50%" x2="30%" y2="70%" class="bandwidth-line" />  
+            <line x1="50%" y1="50%" x2="50%" y2="70%" class="bandwidth-line" /> 
+            <line x1="50%" y1="50%" x2="70%" y2="70%" class="bandwidth-line" /> 
 
-      <!--=============== MAIN (EMPTYYYYY FOR NOW) ===============-->
-      <main class="main container" id="main">
-         
-      </main>
-      
-      
-      <script src="assets/js/main.js"></script>
-   </body>
+         </svg>
+       </div>
+   </main>
+
+   <script src="assets/js/main.js"></script>
+</body>
 </html>
