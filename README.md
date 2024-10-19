@@ -5,7 +5,7 @@ Some functions didnt work correctly because of the lack of teamwork between the 
 ### WHAT's WORK correctly :
  Simulation without visualisation .
 ### WHAT's supposed to work correctly :
-1. Registration with email verification " need little ajustement to work correctly ".
+1. Registration with email verification { with emailJS } " need little ajustement to work correctly ".
 2. Authentication .
 3. Visualisation synchronized with the simulation .
 4. Database of users + Databases of the simulations .  
