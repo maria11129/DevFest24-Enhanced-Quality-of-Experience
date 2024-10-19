@@ -1,7 +1,7 @@
 # devFest-Enhanced-Quality-of-Experience-
 This project addresses the challenge of improving the Quality of Experience (QoE) for satellite broadband users sharing bandwidth. Our solution dynamically allocates bandwidth to clients based on real-time traffic shaping, ensuring optimal performance even under bandwidth constraints.
 ## NOTE :
-Some functions didnt work correctly because of the lack of teamwork between the backend and the frontend " Im the backend " and you can call me " Full stack " :/ :)
+Some functions didnt work correctly because of the lack of teamwork between the backend and the frontend " Im the backend dev " but you can call me " Full stack ". it's sad :/ :)
 
 # FastAPI Registration with Email Verification
 
