@@ -36,7 +36,7 @@ This FastAPI application implements user registration with email verification us
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/fastapi-registration.git
+   git clone https://github.com/maria11129/DevFest24-Enhanced-Quality-of-Experience/fastapi-registration.git
    cd fastapi-registration
    ```
 
